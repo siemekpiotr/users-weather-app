@@ -1,0 +1,42 @@
+.home{
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__card{
+        padding: 35px;
+        width: 500px;
+        box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.6);
+    }
+    &__header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__title{
+        display: flex;
+        align-items: center;
+    }
+    &__buttons{
+        display: flex;
+    }
+    &__background{
+        background-image: url('../../assets/img/bgimg.jpg');
+        filter: grayscale(50%);
+        background-size: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+    &__icon{
+        &--admin{
+            color: darkslategray;
+        }
+    }
+}

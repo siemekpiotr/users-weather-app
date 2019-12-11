@@ -1,0 +1,26 @@
+<h2>{{tranPos.title}}</h2>
+<form [formGroup]="userForm" (ngSubmit)="submitDialog()" class="dialog__form">
+  <mat-form-field class="input-full">
+    <input matInput placeholder="Name" formControlName="name" required>
+  </mat-form-field>
+  <mat-form-field class="input-full">
+    <input matInput placeholder="Surname" formControlName="surname" required>
+  </mat-form-field>
+  <mat-form-field class="input-full">
+    <input matInput placeholder="City" formControlName="city" required>
+  </mat-form-field>
+  <mat-form-field class="input-full">
+    <input matInput placeholder="Country" formControlName="country" required>
+  </mat-form-field>
+  <mat-form-field class="input-full">
+    <input matInput placeholder="Email" formControlName="email" required>
+  </mat-form-field>
+  <mat-form-field class="input-full">
+    <input matInput placeholder="Password" formControlName="password" type="password" required>
+  </mat-form-field>
+  <mat-checkbox *ngIf="letAdmin" class="dialog__checkbox" formControlName="admin">Set this user as administrator</mat-checkbox>
+  <div class="dialog__buttons">
+    <button type="button" (click)="closeDialog()" mat-stroked-button class="dialog__buttons--cancel">Cancel</button>
+    <button mat-flat-button color="primary" type="submit" [disabled]="!userForm.valid">{{tranPos.submit}}</button>
+  </div>
+</form>

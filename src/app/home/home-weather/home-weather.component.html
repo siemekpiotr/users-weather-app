@@ -1,0 +1,14 @@
+<section class="forecast">
+  <h4>Your hourly weather forecast for {{city}}</h4>
+      <div class="forecast__preloader" *ngIf="chartPreloader">
+        <mat-spinner diameter="50"></mat-spinner>
+      </div>
+      <canvas class="forecast__chart" baseChart [ngStyle]="{'filter' : chartPreloader ? 'blur(2px)' : 'blur(0px)'}"
+        [datasets]="barChartData"
+        [labels]="barChartLabels"
+        [options]="barChartOptions"
+        [legend]="barChartLegend"
+        [chartType]="barChartType">
+      </canvas>
+</section>
+  

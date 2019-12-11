@@ -1,0 +1,30 @@
+<section class="register">
+    <mat-card class="register__card">
+      <h1>Register</h1>
+      <form [formGroup]="registerForm" (ngSubmit)="registerUser()" class="register__form">
+        <mat-form-field class="input-full">
+          <input matInput placeholder="Name" formControlName="name" required>
+        </mat-form-field>
+        <mat-form-field class="input-full">
+          <input matInput placeholder="Surname" formControlName="surname" required>
+        </mat-form-field>
+        <mat-form-field class="input-full">
+          <input matInput placeholder="City" formControlName="city" required>
+        </mat-form-field>
+        <mat-form-field class="input-full">
+          <input matInput placeholder="Country" formControlName="country" required>
+        </mat-form-field>
+        <mat-form-field class="input-full">
+          <input matInput placeholder="Email" formControlName="email" required>
+        </mat-form-field>
+        <mat-form-field class="input-full">
+          <input matInput placeholder="Password" formControlName="password" type="password" required>
+        </mat-form-field>
+        <div class="register__buttons">
+          <button routerLink = "/login" type="button" mat-stroked-button class="register__buttons--back">Back</button>
+          <button mat-flat-button color="primary" type="submit" [disabled]="!registerForm.valid">Register</button>
+        </div>
+      </form>
+    </mat-card>
+    <div class="register__background"></div>
+  </section>

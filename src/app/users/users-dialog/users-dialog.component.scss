@@ -1,0 +1,13 @@
+.dialog{
+    &__checkbox{
+        display: flex;
+        padding-bottom: 10px;
+    }
+    &__buttons{
+        display: flex;
+        justify-content: flex-end;
+        &--cancel{
+            margin-right: 10px;
+        }
+    }
+}

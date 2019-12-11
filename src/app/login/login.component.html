@@ -1,0 +1,18 @@
+<section class="login">
+  <mat-card class="login__card">
+    <h1>Login</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="loginUser()" class="login__form">
+      <mat-form-field class="input-full">
+        <input matInput placeholder="Email" formControlName="email">
+      </mat-form-field>
+      <mat-form-field class="input-full">
+        <input matInput placeholder="Password" formControlName="password" type="password">
+      </mat-form-field>
+      <div class="login__buttons">
+        <button routerLink = "/register" type="button" mat-stroked-button class="login__buttons--register">Register</button>
+        <button mat-flat-button color="primary" type="submit" [disabled]="!loginForm.valid">Login</button>
+      </div>
+    </form>
+  </mat-card>
+  <div class="login__background"></div>
+</section>
