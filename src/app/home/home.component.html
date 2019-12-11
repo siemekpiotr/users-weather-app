@@ -2,16 +2,23 @@
   <mat-spinner diameter="50" *ngIf="!userInfo"></mat-spinner>
   <mat-card *ngIf="userInfo" class="home__card">
     <div class="home__header">
-      <h2 class="home__title">Welcome {{userInfo.name}} {{userInfo.surname}} <mat-icon *ngIf="userInfo.admin" class="home__icon--admin" matTooltip="You are an admin">verified_user</mat-icon></h2>
+      <h2 class="home__title">{{userInfo.name}} {{userInfo.surname}} <mat-icon *ngIf="userInfo.admin"
+          class="home__icon--admin" matTooltip="You are an admin">verified_user</mat-icon>
+      </h2>
       <div class="home__buttons">
-        <button *ngIf="userInfo.admin" routerLink = "/users" mat-icon-button matTooltip="Users panel">
-            <mat-icon>format_list_bulleted</mat-icon>
+        <button *ngIf="userInfo.admin" routerLink="/users" mat-icon-button matTooltip="Users panel">
+          <mat-icon>format_list_bulleted</mat-icon>
         </button>
         <button (click)="logout()" mat-icon-button matTooltip="Logout">
           <mat-icon>exit_to_app</mat-icon>
         </button>
       </div>
     </div>
+    <table>
+      <tr><strong>Contact:</strong> {{userInfo.email}}</tr>
+      <tr><strong>City:</strong> {{userInfo.city}}</tr>
+      <tr><strong>Country:</strong> {{userInfo.country}}</tr>
+    </table>
     <app-home-weather *ngIf="userInfo.city" [city]="userInfo.city"></app-home-weather>
   </mat-card>
   <div class="home__background"></div>

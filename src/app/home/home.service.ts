@@ -10,17 +10,13 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class HomeService {
-  // private getUserInfoUrl = 'api/userinfo';
+  private weatherApiUrl = 'weather/data/2.5/forecast';
 
   constructor(
     private http: HttpClient,
   ) { }
 
-  // getUserInfo(): Observable<User> {
-  //   return this.http.get<User>(this.getUserInfoUrl);
-  // }
-
   getWeatherForecast(city: string): Observable<Forecast> {
-    return this.http.get<Forecast>(`weather/data/2.5/forecast?q=${city}&units=metric&appid=${environment.WEATHER_API_KEY}`);
+    return this.http.get<Forecast>(this.weatherApiUrl + `?q=${city}&units=metric&appid=${environment.WEATHER_API_KEY}`);
   }
 }
