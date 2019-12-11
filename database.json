@@ -1,0 +1,264 @@
+{
+  "users": [
+    {
+      "email": "123@123.123",
+      "password": "QWEQWE123123",
+      "name": "Wojciech",
+      "surname": "Seledyn",
+      "city": "Wrocław",
+      "country": "Polska",
+      "admin": true,
+      "id": 3
+    },
+    {
+      "email": "qwe@qwe.qwe",
+      "password": "QWEQWE123123",
+      "name": "Kazimierz",
+      "surname": "Zapałka",
+      "city": "Gdańsk",
+      "country": "Polska",
+      "admin": false,
+      "id": 4
+    },
+    {
+      "id": 5,
+      "name": "Krzysztof",
+      "surname": "Krawczyk",
+      "password": "Price123",
+      "email": "Serena@Irwin.com",
+      "city": "Katowice",
+      "country": "Parostatek",
+      "admin": true
+    },
+    {
+      "id": 6,
+      "name": "Jacek",
+      "surname": "Stachursky",
+      "password": "Stafford123",
+      "email": "Jeanie@Weber.com",
+      "city": "Czechowice-Dziedzice",
+      "country": "Jaśniejąca Gwiazda Kosmosu",
+      "admin": false
+    },
+    {
+      "id": 7,
+      "name": "Knowles",
+      "surname": "Malibo",
+      "password": "Morales123",
+      "email": "Frankie@Garcia.com",
+      "city": "Itmann",
+      "country": "Guinea-Bissau",
+      "admin": false
+    },
+    {
+      "id": 8,
+      "name": "Mccall ",
+      "surname": "Valencia",
+      "password": "Compton123",
+      "email": "Rodgers@Conrad.com",
+      "city": "Spelter",
+      "country": "Dominica",
+      "admin": false
+    },
+    {
+      "id": 9,
+      "name": "Bright",
+      "surname": "Blake",
+      "password": "Ayala123",
+      "email": "Greta@Strickland.com",
+      "city": "Coinjock",
+      "country": "Sao Tome and Principe",
+      "admin": true
+    },
+    {
+      "id": 10,
+      "name": "Ingrid ",
+      "surname": "Combs",
+      "password": "Rasmussen123",
+      "email": "Compton@Booth.com",
+      "city": "Clayville",
+      "country": "Ukraine",
+      "admin": false
+    },
+    {
+      "id": 11,
+      "name": "Debra",
+      "surname": "Duke",
+      "password": "Santiago123",
+      "email": "Dodson@Morin.com",
+      "city": "Floris",
+      "country": "Marshall Islands",
+      "admin": false
+    },
+    {
+      "id": 12,
+      "name": "Ashley ",
+      "surname": "Garrison",
+      "password": "Gilbert123",
+      "email": "Olivia@Guerra.com",
+      "city": "Gambrills",
+      "country": "Cote D'Ivoire (Ivory Coast)",
+      "admin": true
+    },
+    {
+      "id": 13,
+      "name": "Benjamin ",
+      "surname": "Castaneda",
+      "password": "Hall123",
+      "email": "Agnes@Horn.com",
+      "city": "Tibbie",
+      "country": "El Salvador",
+      "admin": false
+    },
+    {
+      "id": 14,
+      "name": "Sexton ",
+      "surname": "Flores",
+      "password": "Hanson123",
+      "email": "Erin@Bradley.com",
+      "city": "Elizaville",
+      "country": "Syria",
+      "admin": true
+    },
+    {
+      "id": 16,
+      "name": "Lesley ",
+      "surname": "Jackson",
+      "password": "Castillo123",
+      "email": "Eileen@Crawford.com",
+      "city": "Finzel",
+      "country": "Nauru",
+      "admin": true
+    },
+    {
+      "id": 19,
+      "name": "Maxwell ",
+      "surname": "Porter",
+      "password": "Gonzalez123",
+      "email": "Hendricks@Clarke.com",
+      "city": "Eastvale",
+      "country": "Samoa",
+      "admin": true
+    },
+    {
+      "id": 20,
+      "name": "Fowler ",
+      "surname": "Hodge",
+      "password": "Bullock123",
+      "email": "Krystal@Andrews.com",
+      "city": "Glenville",
+      "country": "Angola",
+      "admin": true
+    },
+    {
+      "id": 22,
+      "name": "Hancock ",
+      "surname": "Mathis",
+      "password": "Harmon123",
+      "email": "Pugh@Weiss.com",
+      "city": "Utting",
+      "country": "East Timor",
+      "admin": false
+    },
+    {
+      "id": 23,
+      "name": "Sears ",
+      "surname": "Mcleod",
+      "password": "Dennis123",
+      "email": "Cherry@Barker.com",
+      "city": "Matheny",
+      "country": "Congo",
+      "admin": true
+    },
+    {
+      "id": 24,
+      "name": "Burt ",
+      "surname": "Grant",
+      "password": "Curtis123",
+      "email": "Barbara@White.com",
+      "city": "Herlong",
+      "country": "Nepal",
+      "admin": true
+    },
+    {
+      "id": 25,
+      "name": "Roy ",
+      "surname": "Hughes",
+      "password": "Chapman123",
+      "email": "Janis@Daniel.com",
+      "city": "Aberdeen",
+      "country": "Honduras",
+      "admin": true
+    },
+    {
+      "id": 26,
+      "name": "Phyllis ",
+      "surname": "Navarro",
+      "password": "Martinez123",
+      "email": "Stacy@Sanders.com",
+      "city": "Welch",
+      "country": "Bouvet Island",
+      "admin": true
+    },
+    {
+      "id": 27,
+      "name": "Natalia ",
+      "surname": "Wilkinson",
+      "password": "Pena123",
+      "email": "Savage@Goodman.com",
+      "city": "Hayden",
+      "country": "Peru",
+      "admin": true
+    },
+    {
+      "id": 28,
+      "name": "Queen ",
+      "surname": "Harrison",
+      "password": "Mccray123",
+      "email": "Carol@Bryan.com",
+      "city": "Thynedale",
+      "country": "Saint Lucia",
+      "admin": true
+    },
+    {
+      "name": "Luiza",
+      "surname": "Guros",
+      "city": "Krakow",
+      "country": "QWE",
+      "email": "123@qwe.werwer",
+      "password": "qwe123ee2321eQWe",
+      "admin": false,
+      "id": 29
+    },
+    {
+      "name": "kosmos",
+      "surname": "kosmiczny",
+      "city": "wqerqwer",
+      "country": "sdfsg",
+      "email": "wwerwe@wqerqwe.csfdfsd",
+      "password": "123123QWEQWE",
+      "admin": false,
+      "id": 31
+    },
+    {
+      "name": "QWEQ",
+      "surname": "QWEQWE",
+      "city": "QEQWE",
+      "country": "QEWWWE",
+      "email": "EQEQ@QWE.QWE",
+      "password": "elko!@#qweQWE123",
+      "admin": false,
+      "id": 34
+    },
+    {
+      "name": "Stos",
+      "surname": "Stos",
+      "city": "Stos",
+      "country": "Stos",
+      "email": "Stos@sdaa.asd",
+      "password": "BIJJ6DJMX0",
+      "admin": false,
+      "id": 35
+    }
+  ]
+}
