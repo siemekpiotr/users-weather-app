@@ -15,8 +15,9 @@
   <mat-form-field class="input-full">
     <input matInput placeholder="Email" formControlName="email" required>
   </mat-form-field>
-  <mat-form-field class="input-full">
-    <input matInput placeholder="Password" formControlName="password" type="password" required>
+  <mat-checkbox class="dialog__checkbox" *ngIf="!data" checked="generatePassword" (click)="togglePassword()">Generate password</mat-checkbox>
+  <mat-form-field class="input-full" *ngIf="!generatePassword">
+    <input matInput placeholder="Password" formControlName="password" type="password" [required]="!generatePassword">
   </mat-form-field>
   <mat-checkbox *ngIf="letAdmin" class="dialog__checkbox" formControlName="admin">Set this user as administrator</mat-checkbox>
   <div class="dialog__buttons">

@@ -15,9 +15,11 @@ export class UsersDialogComponent implements OnInit {
   dialogUser: User = new User();
   actualUser: User = this.globalService.actualUser;
   letAdmin: boolean = true;
+  generatePassword: boolean = true;
   translations: Translations = {
     edit: new TranslatePos('Edit user', 'Edit'),
-    add: new TranslatePos('Add user', 'Add')};
+    add: new TranslatePos('Add user', 'Add')
+  };
   tranPos: TranslatePos = new TranslatePos();
 
   constructor(
@@ -30,6 +32,7 @@ export class UsersDialogComponent implements OnInit {
   ngOnInit() {
     console.log(this.actualUser);
     if (this.data) {
+      this.generatePassword = false;
       this.dialogUser = this.data;
       if (this.data.email === this.globalService.actualUser.email) { // admin cannot delete his own permission
         this.letAdmin = false;
@@ -47,7 +50,10 @@ export class UsersDialogComponent implements OnInit {
       city: [this.dialogUser.city, Validators.required],
       country: [this.dialogUser.country, Validators.required],
       email: [this.dialogUser.email, [Validators.required, Validators.email]],
-      password: [this.dialogUser.password, [Validators.required, Validators.pattern('(?=.*[A-Z])(?=.*[0-9]).{8,}')]],
+      password: [
+        this.dialogUser.password,
+        this.generatePassword ? null : [Validators.required, Validators.pattern('(?=.*[A-Z])(?=.*[0-9]).{8,}')]
+      ],
       admin: [this.dialogUser.admin],
       id: [this.dialogUser.id]
     });
@@ -61,7 +67,23 @@ export class UsersDialogComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  translateText() {
+  translateText(): void {
     (this.data) ? this.tranPos = this.translations.edit : this.tranPos = this.translations.add;
+  }
+
+  togglePassword(): void {
+    this.generatePassword = !this.generatePassword;
+    if (this.generatePassword) {
+      this.clearUserFormField('password');
+      this.userForm.controls['password'].setValidators(null);
+    } else {
+      this.clearUserFormField('password');
+      this.userForm.controls['password'].setValidators([Validators.required, Validators.pattern('(?=.*[A-Z])(?=.*[0-9]).{8,}')]);
+    }
+  }
+
+  clearUserFormField(field: string): void {
+    this.userForm.controls[field].clearValidators();
+    this.userForm.controls[field].setValue('');
   }
 }
