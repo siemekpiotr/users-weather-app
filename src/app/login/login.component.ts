@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  invalidData: boolean = false;
 
   constructor(
     private auth: AuthService,
@@ -20,7 +21,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.pattern('(?=.*[A-Z])(?=.*[0-9]).{8,}')]]
+      password: ['', [Validators.required]]
     });
   }
 
@@ -31,7 +32,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('token', res.access_token);
         this.router.navigate(['/']);
       },
-      err => console.log(err)
+      () => this.invalidData = true,
     );
   }
 
