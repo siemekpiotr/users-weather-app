@@ -86,12 +86,17 @@ export class UsersComponent implements OnInit {
     console.log('delete');
     console.log(user);
     this.usersService.deleteUser(user.id).subscribe(
-      res => console.log(res),
+      () => {
+        for (let i = 0; i < this.users.length; i++) {
+          if (this.users[i].id === user.id) {
+            this.users.splice(i, 1);
+            break;
+          }
+        }
+        this.dataSource = new MatTableDataSource(this.users);
+      },
       err => console.log(err),
     );
-    this.users = [];
-    this.scroll.skip = 0;
-    this.getUsersList();
   }
 
   onScroll(): void {

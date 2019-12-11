@@ -32,16 +32,6 @@ export class HomeComponent implements OnInit, OnDestroy {
     if (!!this.sub) { this.sub.unsubscribe(); }
   }
 
-  // getUserInfo(): void { // godd if nobody will refresh -> logic moved to global service if app was bigger i would consider using a store
-  //   this.homeService.getUserInfo().subscribe(
-  //     res => {
-  //       this.userInfo = res;
-  //       this.globalService.actualUser = res;
-  //     },
-  //     err => console.log(err)
-  //   );
-  // }
-
   logout(): void {
     this.auth.logout();
   }
