@@ -23,7 +23,6 @@ export class GlobalService {
     this.userInfo().subscribe(
       res => {
         this.actualUser = res;
-        console.log(this.actualUser);
         this.actualUserSub.next(this.actualUser);
       },
       err => console.log(err)

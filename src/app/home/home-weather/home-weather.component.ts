@@ -28,7 +28,6 @@ export class HomeWeatherComponent implements OnInit {
   getWeatherForecast(): void {
     this.homeService.getWeatherForecast(this.city).subscribe(
       res => {
-        console.log(res);
         const chartData = [{ data: [], label: 'Temperature' }, { data: [], label: 'Humidity' }];
         for (let i = 0; i < 9; i++) {
           chartData[0].data.push(res.list[i].main.temp);

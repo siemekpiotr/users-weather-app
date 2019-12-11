@@ -32,7 +32,6 @@ export class UsersComponent implements OnInit {
     this.listPreloader = true;
     this.usersService.getUsers(this.scroll.skip, this.scroll.limit).subscribe(
       res => {
-        console.log(res);
         this.users = [...this.users, ...res];
         this.dataSource = new MatTableDataSource(this.users);
       },
@@ -69,7 +68,6 @@ export class UsersComponent implements OnInit {
   }
 
   openDialog(user?: User): void {
-    console.log(user);
     const dialogRef = this.dialog.open(UsersDialogComponent, { width: '350px', data: user }).afterClosed().subscribe(result => {
       if (result) {
         if (user) {
@@ -83,8 +81,6 @@ export class UsersComponent implements OnInit {
 
   deleteUser(user: User) {
     // open dialog
-    console.log('delete');
-    console.log(user);
     this.usersService.deleteUser(user.id).subscribe(
       () => {
         for (let i = 0; i < this.users.length; i++) {

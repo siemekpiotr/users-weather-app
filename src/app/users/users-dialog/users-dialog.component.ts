@@ -30,7 +30,6 @@ export class UsersDialogComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log(this.actualUser);
     if (this.data) {
       this.generatePassword = false;
       this.dialogUser = this.data;
@@ -40,7 +39,6 @@ export class UsersDialogComponent implements OnInit {
     }
     this.buildForm();
     this.translateText();
-    console.log(this.data);
   }
 
   buildForm(): void {

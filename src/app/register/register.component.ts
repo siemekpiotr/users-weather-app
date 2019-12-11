@@ -29,7 +29,6 @@ export class RegisterComponent implements OnInit {
   }
 
   registerUser(): void {
-    console.log(this.registerForm);
     this.auth.registerUser(this.registerForm.value).subscribe(
       res => {
         localStorage.setItem('token', res.access_token);
