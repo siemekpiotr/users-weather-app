@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AuthService } from '../auth/auth.service';
-import { HomeService } from './home.service';
 import { UserInfo } from './home';
 import { GlobalService } from '../global.service';
 import { Subscription } from 'rxjs';
@@ -12,7 +11,7 @@ import { Subscription } from 'rxjs';
 })
 export class HomeComponent implements OnInit, OnDestroy {
   userInfo: UserInfo;
-  sub: Subscription;
+  subscription: Subscription;
 
   constructor(
     private auth: AuthService,
@@ -21,15 +20,13 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.globalService.getUserInfo();
-    this.sub = this.globalService.actualUserSub.subscribe(
-      () => {
-        this.userInfo = this.globalService.actualUser;
-      }
+    this.subscription = this.globalService.actualUserSub.subscribe(
+      () => this.userInfo = this.globalService.actualUser
     );
   }
 
   ngOnDestroy(): void {
-    if (!!this.sub) { this.sub.unsubscribe(); }
+    this.subscription.unsubscribe();
   }
 
   logout(): void {

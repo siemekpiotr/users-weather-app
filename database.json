@@ -241,24 +241,14 @@
       "id": 31
     },
     {
-      "name": "QWEQ",
-      "surname": "QWEQWE",
-      "city": "QEQWE",
-      "country": "QEWWWE",
-      "email": "EQEQ@QWE.QWE",
-      "password": "elko!@#qweQWE123",
+      "name": "Maryla",
+      "surname": "Rodowicz",
+      "city": "Kraków",
+      "country": "Młodość",
+      "email": "marylko@ona.to",
+      "password": "QWEQWE123123",
       "admin": false,
-      "id": 34
-    },
-    {
-      "name": "Stos",
-      "surname": "Stos",
-      "city": "Stos",
-      "country": "Stos",
-      "email": "Stos@sdaa.asd",
-      "password": "BIJJ6DJMX0",
-      "admin": false,
-      "id": 35
+      "id": 36
     }
   ]
 }

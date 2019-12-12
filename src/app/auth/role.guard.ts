@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, CanActivate, Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { CanActivate, Router } from '@angular/router';
 import { GlobalService } from '../global.service';
 
 @Injectable({
@@ -13,7 +12,7 @@ export class RoleGuard implements CanActivate {
     private router: Router
   ) { }
 
-  canActivate(): boolean {
+  public canActivate(): boolean {
     if (this.globalService.actualUser.admin) {
       return true;
     } else {

@@ -3,6 +3,8 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { AuthToken } from './auth';
+import { User } from '../users/users';
+import { GlobalService } from '../global.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,26 +15,28 @@ export class AuthService {
 
   constructor(
     private http: HttpClient,
-    private router: Router
+    private router: Router,
+    private globalService: GlobalService
   ) { }
 
-  registerUser(user): Observable<AuthToken> {
+  registerUser(user: User): Observable<AuthToken> {
     return this.http.post<AuthToken>(this.registerUrl, user);
   }
 
-  loginUser(user): Observable<AuthToken> {
+  loginUser(user: User): Observable<AuthToken> {
     return this.http.post<AuthToken>(this.loginUrl, user);
   }
 
-  loggedIn() {
+  loggedIn(): boolean {
     return !!localStorage.getItem('token');
   }
 
-  getToken() {
+  getToken(): string {
     return localStorage.getItem('token');
   }
 
-  logout() {
+  logout(): void {
+    this.globalService.actualUser = new User();
     localStorage.removeItem('token');
     this.router.navigate(['/login']);
   }

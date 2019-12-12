@@ -34,5 +34,4 @@ export class LoginComponent implements OnInit {
       () => this.invalidData = true,
     );
   }
-
 }

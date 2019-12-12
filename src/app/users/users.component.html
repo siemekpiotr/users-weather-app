@@ -12,9 +12,9 @@
         </button>
       </div>
     </div>
-    <!-- <mat-form-field class="users__search">
+    <mat-form-field class="users__search">
       <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
-    </mat-form-field> -->
+    </mat-form-field>
     
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 users__table">
     
@@ -36,7 +36,7 @@
       <ng-container matColumnDef="delete">
           <th mat-header-cell *matHeaderCellDef> Delete </th>
           <td mat-cell *matCellDef="let user"> 
-            <button *ngIf="showDeleteButton(user)" (click)="deleteUser(user); $event.stopPropagation()" mat-icon-button matTooltip="Delete" matTooltipPosition="before" >
+            <button *ngIf="showDeleteButton(user)" (click)="deleteDialog(user); $event.stopPropagation()" mat-icon-button matTooltip="Delete" matTooltipPosition="before" >
               <mat-icon>delete</mat-icon>
             </button>
           </td>

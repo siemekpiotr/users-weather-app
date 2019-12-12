@@ -5,6 +5,8 @@ import { UsersService } from './users.service';
 import { Scroll, User } from './users';
 import { MatDialog } from '@angular/material/dialog';
 import { UsersDialogComponent } from './users-dialog/users-dialog.component';
+import { finalize } from 'rxjs/operators';
+import { UsersDeleteDialogComponent } from './users-delete-dialog/users-delete-dialog.component';
 
 @Component({
   selector: 'app-users',
@@ -30,13 +32,14 @@ export class UsersComponent implements OnInit {
 
   getUsersList(): void {
     this.listPreloader = true;
-    this.usersService.getUsers(this.scroll.skip, this.scroll.limit).subscribe(
+    this.usersService.getUsers(this.scroll.skip, this.scroll.limit).pipe(
+      finalize(() => this.listPreloader = false)
+    ).subscribe(
       res => {
         this.users = [...this.users, ...res];
         this.dataSource = new MatTableDataSource(this.users);
       },
-      err => console.log(err),
-      () => this.listPreloader = false,
+      err => console.log(err)
     );
   }
 
@@ -68,19 +71,14 @@ export class UsersComponent implements OnInit {
   }
 
   openDialog(user?: User): void {
-    const dialogRef = this.dialog.open(UsersDialogComponent, { width: '350px', data: user }).afterClosed().subscribe(result => {
+    this.dialog.open(UsersDialogComponent, { width: '350px', data: user }).afterClosed().subscribe(result => {
       if (result) {
-        if (user) {
-          this.editUser(result);
-        } else {
-          this.addUser(result);
-        }
+        user ? this.editUser(result) : this.addUser(result);
       }
     });
   }
 
   deleteUser(user: User) {
-    // open dialog
     this.usersService.deleteUser(user.id).subscribe(
       () => {
         for (let i = 0; i < this.users.length; i++) {
@@ -93,6 +91,14 @@ export class UsersComponent implements OnInit {
       },
       err => console.log(err),
     );
+  }
+
+  deleteDialog(user: User): void {
+    this.dialog.open(UsersDeleteDialogComponent, { width: '350px' }).afterClosed().subscribe(result => {
+      if (result) {
+        this.deleteUser(user);
+      }
+    });
   }
 
   onScroll(): void {

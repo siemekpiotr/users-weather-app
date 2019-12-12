@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { User } from './users/users';
-import { Observable, BehaviorSubject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -15,12 +15,8 @@ export class GlobalService {
     private http: HttpClient
   ) { this.getUserInfo(); }
 
-  userInfo(): Observable<User> {
-    return this.http.get<User>(this.getUserInfoUrl);
-  }
-
   getUserInfo(): void {
-    this.userInfo().subscribe(
+    this.http.get<User>(this.getUserInfoUrl).subscribe(
       res => {
         this.actualUser = res;
         this.actualUserSub.next(this.actualUser);

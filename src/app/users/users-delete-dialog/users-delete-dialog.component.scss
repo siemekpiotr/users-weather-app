@@ -1,0 +1,9 @@
+.dialog{
+    &__buttons{
+        display: flex;
+        justify-content: flex-end;
+        &--cancel{
+            margin-right: 10px;
+        }
+    }
+}

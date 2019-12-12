@@ -19,6 +19,7 @@ import { UsersComponent } from './users/users.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { UsersDialogComponent } from './users/users-dialog/users-dialog.component';
 import { GlobalService } from './global.service';
+import { UsersDeleteDialogComponent } from './users/users-delete-dialog/users-delete-dialog.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { GlobalService } from './global.service';
     HomeWeatherComponent,
     UsersComponent,
     UsersDialogComponent,
+    UsersDeleteDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,7 +52,8 @@ import { GlobalService } from './global.service';
     InfiniteScrollModule,
   ],
   entryComponents: [
-    UsersDialogComponent
+    UsersDialogComponent,
+    UsersDeleteDialogComponent
   ],
   providers: [AuthService, AuthGuard,
   {
